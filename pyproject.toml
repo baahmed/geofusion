@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geofusion"
+version = "0.1.0"
+description = "Uncertain machine learning framework for GPS/GNSS sensor fusion"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Basant Mounir",       email = "basant.mounir@gmail.com" },
+    { name = "Amr T. Abdel-Hamid", email = "amr.abdelhamid@kaust.edu.sa" },
+]
+keywords = [
+    "GPS", "GNSS", "sensor fusion", "uncertain clustering",
+    "machine learning", "positioning", "GeoFusion",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=1.5",
+    "scipy>=1.10",
+    "scikit-learn>=1.2",
+    "torch>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+]
+
+[project.urls]
+Homepage   = "https://github.com/basantmounir/geofusion"
+Repository = "https://github.com/basantmounir/geofusion"
+Paper      = "https://doi.org/10.1109/ACCESS.2025.XXXXXXX"
+Dataset    = "https://www.kaggle.com/code/basantmounir/geofusion-dataset"
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["geofusion*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
